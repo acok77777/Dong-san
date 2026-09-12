@@ -4,21 +4,21 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>동산지부 영무궁화 연찬회</title>
-<meta property="og:image" content="동산 사진/슬라이드1.PNG">
 <style>
 body{margin:0;text-align:center;font-family:Arial,"Malgun Gothic",sans-serif;background:#fff7fb;color:#666}
 .wrap{max-width:600px;margin:auto;padding:15px}
-h1{color:#d66b9c;font-size:28px;white-space:nowrap;letter-spacing:-1px}
-.sub{font-size:18px;color:#888}
+h1{color:#d66b9c;font-size:28px;white-space:nowrap;letter-spacing:-1px;margin-bottom:5px}
+.sub{font-size:18px;color:#888;margin-bottom:18px}
 img{max-width:100%;max-height:70vh;border-radius:18px}
-button,.click{padding:13px 20px;border:0;border-radius:25px;background:#f4c5da;margin:5px;font-weight:bold}
+button{padding:13px 20px;border:0;border-radius:25px;background:#f4c5da;margin:5px;font-weight:bold}
 .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
 .box{background:white;padding:15px;border-radius:20px;border:1px solid #f0dbea}
-.dessert{font-size:40px}.info{margin-top:8px;font-size:14px;color:#888;font-weight:bold}
-.hidden{display:none}.page{margin:15px;font-weight:bold}
-@media(max-width:400px){
-h1{font-size:22px;}
-}
+.dessert{font-size:40px}
+.info{margin-top:8px;font-size:14px;color:#888;font-weight:bold}
+.pageNum{font-size:16px;color:#d66b9c;margin-top:5px;font-weight:bold}
+.hidden{display:none}
+.page{margin:15px;font-weight:bold}
+@media(max-width:400px){h1{font-size:22px}}
 </style>
 </head>
 <body>
@@ -76,7 +76,13 @@ menu.classList.remove('hidden');
 groups.forEach(g=>{
 let d=document.createElement('div');
 d.className='box';
-d.innerHTML=`<div class="dessert">${g[1]}</div><b>${g[0]}번</b><div class="info">페이지 ${g[4]}</div>`;
+d.innerHTML=`
+<div class="dessert">${g[1]}</div>
+<b>${g[0]}번</b>
+<div class="info">페이지</div>
+<div class="pageNum">${g[4]}</div>
+`;
+
 d.onclick=()=>{
 cur=g;
 no=g[2];
