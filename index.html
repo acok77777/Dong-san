@@ -8,31 +8,38 @@
 <style>
 body{margin:0;text-align:center;font-family:Arial,"Malgun Gothic",sans-serif;background:#fff7fb;color:#666}
 .wrap{max-width:600px;margin:auto;padding:15px}
-h1{color:#d66b9c}.sub{font-size:18px;color:#888}
+h1{color:#d66b9c;font-size:28px;white-space:nowrap;letter-spacing:-1px}
+.sub{font-size:18px;color:#888}
 img{max-width:100%;max-height:70vh;border-radius:18px}
 button,.click{padding:13px 20px;border:0;border-radius:25px;background:#f4c5da;margin:5px;font-weight:bold}
 .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
 .box{background:white;padding:15px;border-radius:20px;border:1px solid #f0dbea}
 .dessert{font-size:40px}.info{margin-top:8px;font-size:14px;color:#888;font-weight:bold}
 .hidden{display:none}.page{margin:15px;font-weight:bold}
+@media(max-width:400px){
+h1{font-size:22px;}
+}
 </style>
 </head>
 <body>
 <div class="wrap">
 
 <div id="home">
-<h1>🌷 동산지부 영무궁화 연찬회 🌷<div class="sub">🌸 신인간혁명 9권 🌸</div></h1>
+<h1>🌷 동산지부 영무궁화 연찬회 🌷</h1>
+<div class="sub">🌸 신인간혁명 9권 🌸</div>
 <img src="동산 사진/슬라이드1.PNG"><br>
-<button onclick="showMenu()"> 🌸클릭</button>
+<button onclick="showMenu()">🌸클릭</button>
 </div>
 
 <div id="menu" class="hidden">
-<h1>🌷 동산지부 영무궁화 연찬회 🌷<div class="sub">🌸 신인간혁명 9권 🌸</div></h1>
+<h1>🌷 동산지부 영무궁화 연찬회 🌷</h1>
+<div class="sub">🌸 신인간혁명 9권 🌸</div>
 <div class="grid" id="grid"></div>
 </div>
 
 <div id="view" class="hidden">
-<h1>🌷 동산지부 영무궁화 연찬회 🌷<div class="sub">🌸 신인간혁명 9권 🌸</div></h1>
+<h1>🌷 동산지부 영무궁화 연찬회 🌷</h1>
+<div class="sub">🌸 신인간혁명 9권 🌸</div>
 <img id="photo">
 <div class="page" id="page"></div>
 <button onclick="move(-1)">◀ 이전</button>
@@ -69,13 +76,7 @@ menu.classList.remove('hidden');
 groups.forEach(g=>{
 let d=document.createElement('div');
 d.className='box';
-
-d.innerHTML=`
-<div class="dessert">${g[1]}</div>
-<b>${g[0]}번</b>
-<div class="info">페이지 ${g[4]}</div>
-`;
-
+d.innerHTML=`<div class="dessert">${g[1]}</div><b>${g[0]}번</b><div class="info">페이지 ${g[4]}</div>`;
 d.onclick=()=>{
 cur=g;
 no=g[2];
@@ -83,7 +84,6 @@ menu.classList.add('hidden');
 view.classList.remove('hidden');
 show();
 };
-
 grid.appendChild(d);
 });
 
