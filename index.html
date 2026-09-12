@@ -1,46 +1,140 @@
 <!doctype html>
 <html lang="ko">
+
 <head>
+
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<meta name="viewport"
+content="width=device-width,initial-scale=1">
+
 <title>동산지부 영무궁화 연찬회</title>
-<meta property="og:image" content="동산 사진/슬라이드1.PNG">
+
+<meta property="og:title"
+content="🌷 동산지부 영무궁화 연찬회 🌷">
+
+<meta property="og:description"
+content="🌸 신인간혁명 9권 🌸">
+
+<meta property="og:image"
+content="동산 사진/슬라이드1.PNG">
+
+
 <style>
-body{margin:0;text-align:center;font-family:Arial;background:#fff7fb;color:#666}
-.wrap{max-width:600px;margin:auto;padding:15px}
-h1{color:#d66b9c}.sub{font-size:18px;color:#888}
-img{max-width:100%;max-height:70vh;border-radius:18px}
-button,.click{padding:13px 20px;border:0;border-radius:25px;background:#f4c5da;margin:5px;font-weight:bold}
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
-.box{background:white;padding:15px;border-radius:20px;border:1px solid #f0dbea}
-.dessert{font-size:40px}.name{width:90%;padding:6px;text-align:center}
-.hidden{display:none}.page{margin:15px;font-weight:bold}
-</style>
-</head>
-<body>
-<div class="wrap">
-<div id="home">
-<h1>🌷 동산지부 영무궁화 연찬회 🌷<div class="sub">🌸 신인간혁명 9권 🌸</div></h1>
-<img src="동산 사진/슬라이드1.PNG"><br><button onclick="showMenu()">👆 클릭</button>
-</div>
-<div id="menu" class="hidden">
-<h1>🌷 동산지부 영무궁화 연찬회 🌷<div class="sub">🌸 신인간혁명 9권 🌸</div></h1>
-<div class="grid" id="grid"></div>
-</div>
-<div id="view" class="hidden">
-<h1>🌷 동산지부 영무궁화 연찬회 🌷<div class="sub">🌸 신인간혁명 9권 🌸</div></h1>
-<img id="photo"><div class="page" id="page"></div>
-<button onclick="move(-1)">◀ 이전</button><button onclick="exitView()">나가기</button><button onclick="move(1)">다음 ▶</button>
-</div>
-</div>
-<script>
-const groups=[[1,'🍰',2,10],[2,'🍮',11,18],[3,'🍩',19,26],[4,'🧁',27,36],[5,'🍪',37,42],[6,'🍓',43,50]];
-let cur,no;
-const home=document.getElementById('home'),menu=document.getElementById('menu'),view=document.getElementById('view'),photo=document.getElementById('photo'),page=document.getElementById('page');
-function showMenu(){home.classList.add('hidden');menu.classList.remove('hidden')}
-groups.forEach(g=>{let d=document.createElement('div');d.className='box';d.innerHTML=`<div class=dessert>${g[1]}</div>${g[0]}번<br><input class=name placeholder="이름 입력">`;d.onclick=e=>{if(e.target.tagName!='INPUT'){cur=g;no=g[2];menu.classList.add('hidden');view.classList.remove('hidden');show()}};grid.appendChild(d)});
-function show(){photo.src=`동산 사진/슬라이드${no}.PNG`;page.textContent=`${no-cur[2]+1}페이지 / ${cur[3]-cur[2]+1}페이지`}
-function move(x){if(no+x>=cur[2]&&no+x<=cur[3]){no+=x;show()}}
-function exitView(){view.classList.add('hidden');menu.classList.remove('hidden')}
-</script>
-</body></html>
+
+body{
+margin:0;
+text-align:center;
+font-family:Arial,"Malgun Gothic",sans-serif;
+background:#fff7fb;
+color:#666;
+}
+
+
+.wrap{
+max-width:600px;
+margin:auto;
+padding:15px;
+}
+
+
+h1{
+color:#d66b9c;
+}
+
+
+.sub{
+font-size:18px;
+color:#888;
+}
+
+
+img{
+max-width:100%;
+max-height:70vh;
+border-radius:18px;
+}
+
+
+
+button,
+.click{
+
+padding:13px 20px;
+
+border:0;
+
+border-radius:25px;
+
+background:#f4c5da;
+
+margin:5px;
+
+font-weight:bold;
+
+cursor:pointer;
+
+}
+
+
+
+.grid{
+
+display:grid;
+
+grid-template-columns:
+repeat(3,1fr);
+
+gap:12px;
+
+}
+
+
+
+.box{
+
+background:white;
+
+padding:15px;
+
+border-radius:20px;
+
+border:1px solid #f0dbea;
+
+}
+
+
+
+.dessert{
+
+font-size:40px;
+
+}
+
+
+
+.info{
+
+margin-top:8px;
+
+font-size:14px;
+
+color:#888;
+
+font-weight:bold;
+
+}
+
+
+
+.hidden{
+
+display:none;
+
+}
+
+
+
+.page{
+
+margin
